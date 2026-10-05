@@ -1,0 +1,45 @@
+{
+  "displayName": "E8 - CA - Require Phishing Resistant MFA - Admin Roles - Hardened",
+  "state": "enabledForReportingButNotEnforced",
+  "conditions": {
+    "users": {
+      "includeRoles": [
+        "62e90394-69f5-4237-9190-012177145e10",
+        "194ae4cb-b126-40b2-bd5b-6091b380977d",
+        "29232cdf-9323-42fd-ade2-1d097af3e4de",
+        "729827e3-9c14-49f7-bb1b-9608f156bbb8"
+      ],
+      "excludeUsers": [
+        "REPLACE_WITH_BREAK_GLASS_OBJECT_ID_1"
+      ]
+    },
+    "applications": {
+      "includeApplications": [
+        "All"
+      ]
+    },
+    "clientAppTypes": [
+      "all"
+    ],
+    "locations": {
+      "includeLocations": [
+        "All"
+      ],
+      "excludeLocations": [
+        "REPLACE_WITH_TRUSTED_LOCATION_ID_1"
+      ]
+    }
+  },
+  "grantControls": {
+    "operator": "OR",
+    "authenticationStrength": {
+      "id": "REPLACE_WITH_PHISHING_RESISTANT_AUTH_STRENGTH_ID"
+    }
+  },
+  "sessionControls": {
+    "persistentBrowser": {
+      "mode": "never",
+      "isEnabled": true
+    }
+  }
+}

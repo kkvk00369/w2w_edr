@@ -1,0 +1,8 @@
+{
+  "name": "E8 - User Hardening - ASR",
+  "description": "Example policy template. Replace settings with exported Settings Catalog payload.",
+  "platforms": "windows10",
+  "technologies": "mdm,microsoftSense",
+  "deployment": "pilot",
+  "settings": []
+}

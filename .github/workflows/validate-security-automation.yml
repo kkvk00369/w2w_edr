@@ -1,0 +1,48 @@
+name: Validate Security Automation
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/validate-security-automation.yml
+      - scripts/**
+      - config/conditional-access/**
+      - docs/**
+      - README.md
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate PowerShell script syntax
+        shell: pwsh
+        run: |
+          $hadErr = $false
+          Get-ChildItem ./scripts/*.ps1 | ForEach-Object {
+            $tokens = $null
+            $errs = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$errs)
+            if ($errs.Count -gt 0) {
+              $hadErr = $true
+              Write-Host "Syntax errors in $($_.Name):" -ForegroundColor Red
+              $errs | ForEach-Object { Write-Host " - $($_.Message)" -ForegroundColor Red }
+            }
+            else {
+              Write-Host "OK: $($_.Name)"
+            }
+          }
+
+          if ($hadErr) {
+            throw "PowerShell syntax validation failed."
+          }
+
+      - name: Validate CA template pack
+        shell: pwsh
+        run: |
+          ./scripts/Test-ConditionalAccessPolicyPack.ps1 `
+            -PolicyFolder "../config/conditional-access" `
+            -IncludeHardened `
+            -AllowPlaceholders

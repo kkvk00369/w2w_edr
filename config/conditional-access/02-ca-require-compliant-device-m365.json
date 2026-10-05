@@ -1,0 +1,34 @@
+{
+  "displayName": "E8 - CA - Require Compliant Device - Microsoft 365",
+  "state": "enabledForReportingButNotEnforced",
+  "conditions": {
+    "users": {
+      "includeUsers": [
+        "All"
+      ],
+      "excludeUsers": [
+        "REPLACE_WITH_BREAK_GLASS_OBJECT_ID_1"
+      ]
+    },
+    "applications": {
+      "includeApplications": [
+        "Office365"
+      ]
+    },
+    "clientAppTypes": [
+      "all"
+    ],
+    "devices": {
+      "deviceFilter": {
+        "mode": "exclude",
+        "rule": "device.deviceOSType -eq \"Windows\" and device.trustType -eq \"ServerAD\""
+      }
+    }
+  },
+  "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+      "compliantDevice"
+    ]
+  }
+}
