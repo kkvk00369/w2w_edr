@@ -3,12 +3,12 @@
 **Company:** [Company Name] | **Trainer:** [Name] | **Date:** [date] | **Audience:** All staff and contractors
 
 ## Purpose
-This sheet provides the minimum training staff need to use AI safely and responsibly in the workplace. It supports the organisation’s AI policy and helps prevent data leakage, poor output quality, unsafe automation and unmanaged AI use.
+This sheet provides the minimum training staff need to use AI safely and responsibly in the workplace. It supports the organisation’s AI policy and reduces the risk of data leakage, poor output quality, unsafe automation and unmanaged AI use.
 
 AI is a productivity tool, not an authority. Staff are accountable for the prompts they use, the outputs they rely on and the decisions they act upon.
 
 ## Training requirement
-All staff who use AI must complete this training before using approved AI tools in business processes. Managers must ensure that users understand the rules for approved AI use and the escalation steps for risky or uncertain scenarios.
+All staff who use AI must complete this training before using approved AI tools in business processes. Managers must ensure users understand the approved boundaries, escalation steps and responsibilities for safe AI use.
 
 ## Approved use
 Use only AI tools approved by the business.
@@ -106,9 +106,10 @@ Ask yourself:
 - Am I allowed to share this data with the tool?
 - Have I validated the output before relying on it?
 - Would I be comfortable explaining this action to the business owner or security lead?
+- If this output were shared externally, would it still be acceptable?
 
-## Acknowledgement
-I understand the safe use rules and agree to follow them.
+## Acknowledgement and sign-off
+I confirm that I have read and understood this AI staff training sheet and agree to use AI only in accordance with the organisation’s approved tools, data handling rules and security requirements.
 
 **Name:** [Name] | **Title:** [Title] | **Signature:** [Signature] | **Date:** [Date]
 
